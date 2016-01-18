@@ -40,7 +40,7 @@ public class MeasurementReporter extends SkipIdleReporter {
             , SortedMap<String, Meter> meters
             , SortedMap<String, Timer> timers) {
         
-        final long timestamp = clock.getTime();
+        final long timestamp = clock.getTick();
 
         for (Map.Entry<String, Gauge> entry : gauges.entrySet()) {
         	sender.send(fromGauge(entry.getKey(), entry.getValue(), timestamp));
