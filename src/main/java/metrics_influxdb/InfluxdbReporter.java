@@ -359,7 +359,7 @@ public class InfluxdbReporter extends SkipIdleReporter {
 			SortedMap<String, Histogram> histograms,
 			SortedMap<String, Meter> meters,
 			SortedMap<String, Timer> timers) {
-		final long timestamp = clock.getTime();
+		final long timestamp = System.nanoTime();
 
 		// oh it'd be lovely to use Java 7 here
 		try {
