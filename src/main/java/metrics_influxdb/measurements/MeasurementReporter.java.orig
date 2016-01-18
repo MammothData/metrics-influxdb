@@ -40,7 +40,11 @@ public class MeasurementReporter extends SkipIdleReporter {
             , SortedMap<String, Meter> meters
             , SortedMap<String, Timer> timers) {
         
+<<<<<<< HEAD
+        final long timestamp = System.nanoTime();
+=======
         final long timestamp = clock.getTime();
+>>>>>>> parent of 8bfd66d... clock.getTick
 
         for (Map.Entry<String, Gauge> entry : gauges.entrySet()) {
         	sender.send(fromGauge(entry.getKey(), entry.getValue(), timestamp));
